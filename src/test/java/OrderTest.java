@@ -36,8 +36,8 @@ class OrderProcessingTest {
     void testCategoryMixException() {
          StandardOrderProcessor processor = new StandardOrderProcessor();
         OrderItem[] items = {
-                new OrderItem("Wine", "ALCOHOL", new Money(300, "UAH")),
-                new OrderItem("Toy", "KIDS", new Money(150, "UAH"))
+                new OrderItem("Wine", "Alcohol", new Money(300, "UAH")),
+                new OrderItem("Toy", "Kids", new Money(150, "UAH"))
         };
         Order order = new Order("ORD-MIX", items);
         assertThrows(CategoryMixException.class, () -> processor.processOrder(order, new CardPayment()));
